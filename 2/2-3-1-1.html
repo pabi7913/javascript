@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>範例 2-3-1.html</title>
+</head>
+
+<body>
+
+    <!-- p -->
+    <p id="content" onclick='getValue()'> <span style='color:red;'> Hello World</span></p>
+
+
+    <!-- button -->
+    <button id='btn' value='hi!' onclick='getValue()'>按鈕</button>
+
+    <script>
+
+        // 取值
+        function getValue() {
+            // 設p
+            var p = document.getElementById('content');
+            // 跳出視窗(p的html)
+            alert(p.innerHTML)
+        }
+
+        
+        function getValue() {
+            var btn = document.getElementById('btn');
+            alert(btn.value)
+        };
+
+        ;</script>
+</body>
+
+</html>
