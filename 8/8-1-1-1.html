@@ -1,0 +1,102 @@
+<html>
+<head>
+    <title>範例 8-1-1.html</title>
+    <script>
+let a = false;
+if(a){
+    console.log(a);
+    document.write('a');
+}
+else{
+    console.log('b');
+    document.write('b');
+}
+// A:b
+
+let A = true;
+if(A){
+    console.log(A);
+    document.write('A');
+}
+else{
+    console.log('b');
+    document.write('b');
+}
+// A:true
+
+let c = 10;
+
+if (c>10){
+console.log('c>10')
+}
+// 抓到第一個對的就走了，不會再繼續往下判斷！
+else if(c===10){
+    console.log('c===10')
+}
+else if(c<11){
+    console.log('c<11')
+}
+
+// 設d為(2>3) 是否正確，正確請回傳true
+// 不正確請回傳false
+let d =(2>3) ?true:false;
+console.log(d)
+// A:false
+
+let e =2;let f =3;
+let ef = (e>f) ?true:false;
+console.log(ef)
+// A:false
+
+let E =3;let F =2;
+let EF = (E>F) ?true:false;
+console.log(EF)
+// A:true
+
+// 分開判斷1case+1break
+let g= 3
+switch(g){
+    case '3':console.log('3');
+    break;
+    // false 不是字串
+    case 3:console.log(3);
+    break;
+    // A:ture 是數字
+    // 不再往下判斷
+    case 'g':console.log('g');
+    break;
+    default:console.log('default');
+}
+
+// 一起判斷case*3+1break
+let G= 3
+switch(G){
+    case '4':console.log('4');
+    // false 不是字串
+    case 4:console.log(4);
+    // false 不是4
+    break;
+    default:console.log('default');
+// A:default
+}
+
+
+
+
+
+    // let condition = false;
+    // if(condition) {
+    //     //若條件為真，則執行這個區塊的程式碼
+    //     console.log('Hello World!');
+    //     document.write('Hello World!');
+    // } else {
+    //     //若條件為假，則執行這個區塊的程式碼
+    //     console.log('May you have a nice day!');
+    //     document.write('May you have a nice day!');
+    // }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

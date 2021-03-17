@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title>範例 7-2-1.html</title>
+</head>
+<body>
+    <p class="A">有一隻狗</p>
+    <p class="A">有一隻貓</p>
+    <p class="A">有一隻雞</p>
+
+    <script>
+        // ～let a = document.querySelector('tag.class')】
+        // 尋找在文件中「第1個」'tag.class'，設代號為 a
+        // ～a.style.css='csstype';
+        let a = document.querySelector('p');
+        a.style.backgroundColor = '#ccc';
+
+        // ～let a = document.querySelectorAll('tag.class')
+        // 尋找在文件中「所有」'tag.class'，設代號為 a
+        // ～a[第幾個].style.css='csstype';
+        let b = document.querySelectorAll('p.A');
+        b[0].style.color = 'red';
+        b[0].style.lineHeight = '100px';
+        b[0].style.textAlign = 'center';
+        b[1].style.fontSize = '3rem';
+        b[1].innerHTML = '<p style="color:red">...瓜瓜瓜...</p>';
+        b[2].style.border='1px solid orange';
+        b[2].style.fontSize = '5rem';
+        
+
+
+
+
+
+    //這裡是回傳第一個 p，是一種 element
+    // let p = document.querySelector('p');
+    // p.style.backgroundColor = '#7878ff';
+    </script>
+</body>
+</html>

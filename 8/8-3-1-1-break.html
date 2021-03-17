@@ -1,0 +1,23 @@
+<html>
+
+<head>
+    <title>for{if{break}}停止，回到上一層</title>
+    <script>
+        // ①設a為1~10
+        for (let a = 1; a <= 10; a++) {
+            // ②若a為5，停止，回到上一層(2種寫法)
+            if (a === 5) { break; }
+            // 只有一行的時候不用{}包住
+            if (a === 5) break;
+            // ③印出a(2種寫法)
+            console.log(`a=${a}`)
+            console.log('a=' + a)
+        }
+        // A:a=1 a=2 a=3 a=4
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

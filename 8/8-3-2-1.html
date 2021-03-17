@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <title>for{for{if{break}}}</title>
+    <script>
+        // ①設a為1~10
+        for (let a = 1; a <= 10; a++) {
+            // if (a === 5) { break; }
+            // ②設b為1~10
+            for (let b = 1; b <= 10; b++) {
+                console.log(`a=${a}, b=${b}`)
+                // console.log(`a=${a}, b=${b}`)
+                // ③若a為5，停止，回到上一層，從6開始跑到10(A:a=1~10 缺5,b=1~10)
+                // 此時break會等於continue?
+                if (a === 5) { break; }
+                // if (a === 5) { continue; }
+                // ③若b為5，停止，回到上一層(A:a=1~10,b=1~4)
+                // if (b === 5) { break; }
+                // 只有一行的時候不用{}包住
+                // ④印出a,b
+                // console.log(`a=${a}, b=${b}`)
+                
+                
+            }
+        }
+        // A:a=1 a=2 a=3 a=4
+
+
+
+        /**
+         * j 為 4 的時候，只跳出內部迴圈，
+         * 但外部迴圈依然會繼續執行，
+         * 只有內部迴圈的 j 走到 4 時候，
+         * 自行跳出
+         */
+        // for (let i = 1; i <= 9; i++) {
+        //     for (let j = 1; j <= 9; j++) {
+        //         if (j == 4) {
+        //             break;
+        //         }
+        //         console.log(`i = ${i}, j = ${j}`);
+        //     }
+        // }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
