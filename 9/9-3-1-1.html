@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <title>範例 9-3-1.html</title>
+    <script>
+        // 抓出裡面所有的值
+
+        // [陣列：有序的0 1 2]，取值用for (let _ of A)
+        let A = [
+            'a',
+            'b',
+            'c'
+        ];
+        for (let _ in A) {
+            console.log(`${_}`);
+        }
+        // A:0 1 2(➜序列)
+
+        // ※建議用of(➜值)
+        for (let _ of A) {
+            console.log(`${_}`);
+        }
+        // A:a b c
+
+        // {物件：無序的}，取值用for (let _ in B) console.log(`${B[_]}`);
+        let B = {
+            'd': 'D',
+            'e': 'E',
+            'f': '5'
+        };
+        console.log(B);
+        // A:{d: "D", e: "E", f: "5"}
+
+        for (let _ in B) {
+            console.log(`${_}`);
+        }
+        // A:d e f(➜名稱)
+
+        for (let _ in B) {
+            console.log(`${B[_]}`);
+        }
+        // A:D E 5(➜值)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <title>範例 9-2-1.html</title>
+    <script>
+        // ※名稱最好全部都加引號包起來
+        let A = {
+            'a':function () {console.log('3')},
+            'b':function () {console.log('B')},
+            'c':{
+                'C': function () {
+                    // 放在function裡代表有呼叫，console.log才會出現
+                    console.log('C')
+                },
+                'D': function () {
+                    console.log('D')
+                },
+                'E': function () {
+                    console.log('E')
+                },
+            }
+        }
+
+        // console.log(A['a']);
+        // console.log(A.a);
+        // console.log(A['b']);
+        // console.log(A['c']);
+        // 呼叫時不用加引號
+        A['a']
+        A.b
+        A['c']
+        // A.c.C()
+        // A.c.D()
+        // A.c.E()
+
+        //  增加物件屬性
+        A['f']='F'
+        // console.log(A['f']);
+        A.g = 'G'
+        // 將物件屬性全部列出，會先用一個object大包包包住，再出現設定的屬性(直列式)
+        // console.dir( A , {depth: null});
+        // 將物件屬性以字串式列出（橫的）
+        // console.log(A);
+        
+        
+        for(let attr in A) {
+        console.log(`${attr}`);
+    } 
+    for(let value of attr) {
+        console.log(`The property in object variable is ${attr}`);
+    }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
