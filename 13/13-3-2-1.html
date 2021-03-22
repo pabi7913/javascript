@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>範例 13-3-2.html</title>
+    <script>
+    //宣告全域變數
+    A = 3;
+
+    //定義函式
+    function D(){
+        //宣告變數
+        let B = 'b';
+
+        //內部函式(使用箭頭函式)
+        let C = () => {
+            //存取全域變數
+            console.log(B + ' 說: ' + A);
+        }
+
+        //執行內部函式
+        C();
+    }
+
+    //執行函式
+    D();
+    // A:B說3
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

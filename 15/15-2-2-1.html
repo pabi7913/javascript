@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <title>範例 15-2-2.html</title>
+</head>
+
+<body>
+    <div id='box'>0</div>
+
+    <script>
+
+        let A = document.getElementById('box');
+        setTimeout(function () {
+            A.innerText = 1;
+        }, 1000)
+        setTimeout(function () {
+            A.innerText = 2;
+        }, 2000)
+        setTimeout(function () {
+            A.innerText = 3;
+        }, 3000)
+
+
+    </script>
+</body>
+
+</html>

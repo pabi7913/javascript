@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>範例 11-1-1.html</title>
+    <script>
+    //輸出 json 內容 
+    let AA = `{
+        "firstName": "Darren",
+        "lastName": "Yang",
+        "gender": "male",
+        "age": 18,
+        "address": {
+            "streetAddress": "台北市復興南路一段390號2樓、3樓",
+            "city": "Taipei"
+        },
+        "phoneNumber": [
+            {
+                "type": "office",
+                "number": "6631-6666"
+            },
+            {
+                "type": "fax",
+                "number": "6631-6598"
+            }
+        ]
+    }`;
+
+    //將 json 轉成物件
+    let A = JSON.parse(AA);
+
+    // let A= JSON.stringify(AA);
+
+    //讀取 obj 物件屬性 firstName
+    console.log(A['firstName'])
+
+    //讀取 obj 物件屬性 address 裡面的物件屬性 streetAddress
+    console.log(A['address']['streetAddress']);
+
+    //A的phoneNumber內所有資料為B，共有2組，跑完一組之後再跑一組！
+    for(let B of A['phoneNumber']){
+        console.log('=============');
+        console.log(B['type']);
+        console.log(B['number']);
+    }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

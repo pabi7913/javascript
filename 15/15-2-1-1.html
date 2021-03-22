@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <title>設定3秒跳出setTimeout</title>
+    <script>
+        setTimeout(function () { alert('A'); }, 0);
+        setTimeout(function () { alert('B'); }, 1000);
+        setTimeout(function () { alert('C'); }, 2000);
+        setTimeout(function () { alert('D'); }, 3000);
+
+        // ①設定函式
+        function getMessage() {
+            alart('good');
+        }
+        // ②套入函式
+        setTimeout(getMessage, 5000)
+
+        //自訂函式後，使用 setTimeout 來調用自訂函式
+        function getMessage() {
+            alert('Good job!');
+        }
+
+        //十秒後跳出訊息 Good job!
+        setTimeout(getMessage, 10000);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

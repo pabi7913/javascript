@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <title>範例 15-2-5.html</title>
+</head>
+
+<body>
+    <button onclick='start_s()' id='start_b'>start</button>
+    <input type="text" id='txt'>
+    <button onclick='over_s()' id='over_b'>over</button>
+
+    <script>
+
+        let start = 0;
+
+        let s;
+
+        function count() {
+            // ★只能這樣寫，左邊右邊不能倒過來
+            document.getElementById('txt').value = start;
+            // start=start+1;
+            start++;
+
+            // s = setTimeout(function () { count() }, 250)
+        }
+
+        // function start_s() { count() };
+        // function over_s() { clearTimeout(s) };
+
+        // ------------------------------------------------
+
+        // 開始加
+        function start_s(){
+            s=setInterval(function(){count()},1000);
+            document.getElementById('start_b').setAttribute('disabled',true);
+            document.getElementById('over_b').removeAttribute('disabled');
+        }
+
+        // 結束加
+        function over_s(){
+            clearInterval(s);
+            // ★disabled
+            document.getElementById('start_b').removeAttribute('disabled');
+            document.getElementById('over_b').setAttribute('disabled',true);
+            
+        }
+    </script>
+</body>
+
+</html>

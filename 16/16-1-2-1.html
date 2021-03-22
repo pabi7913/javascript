@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Math.floor( Math.random() * _ )隨機選擇</title>
+    <script>
+        // ①先設所有值為A
+        let A = ['a', 'b', 'c', 'd']
+        // ②設其中隨機1個為B
+        let B = Math.floor(Math.random() * 5)
+
+        // ③列表出來
+        for (let a = 0; a < A.length; a++) {
+            document.write('✔' + A[a] + '<br>')
+        }
+        // ④隨機跑出1個
+        document.write(`${A[B]}`)
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

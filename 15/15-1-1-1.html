@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <title>現在時刻</title>
+    <script>
+
+        // Date大寫
+        let date = new Date();
+        // ----------------------------------------
+
+        let strTime = '';
+
+        strTime += date.getFullYear();
+        strTime += date.getMonth() + 1;
+        strTime += date.getDate();
+        strTime += date.getHours();
+        strTime += date.getMinutes();
+        strTime += date.getSeconds();
+
+        console.log(strTime);
+        // A:2021322144719
+
+        // ----------------------------------------
+
+        // 帶格式
+
+
+
+        // 年
+        year = date.getFullYear();
+
+        // 月
+        if ((date.getMonth() + 1) < 10) {
+            month = '0' + (date.getMonth() + 1);
+        } else {
+            month = (date.getMonth() + 1);
+        }
+        // 日
+        if (date.getDate() < 10) {
+            day = '0' + date.getDate();
+        } else {
+            day = date.getDate();
+        }
+        // 時
+        if (date.getHours() < 10) {
+            hour = '0' + date.getHours();
+        } else {
+            hour = date.getHours();
+        }
+        // 分
+        if (date.getMinutes() < 10) {
+            minute = '0' + date.getMinutes();
+        } else {
+            minute = date.getMinutes();
+        }
+        // 秒
+        if (date.getSeconds() < 10) {
+            second = '0' + date.getSeconds();
+        } else {
+            second = date.getSeconds();
+        }
+
+
+
+
+        //輸出結果
+        console.log(`${year}-${month}-${day} ${hour}:${minute}:${second}`);
+    </script>
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

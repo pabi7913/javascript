@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <title>範例 14-1-1.html</title>
+</head>
+
+<body>
+
+    <script>
+        let A = function (firstname) {
+            this.firstname = firstname;
+            this.hand = 2;
+        };
+        // prototype帶入文字函式
+        A.prototype.sayHello = function () {
+            console.log("Hello, I'm " + this.firstname);
+        };
+
+        // ★沒定義過，只是資料，要帶入進去的值，一定要用點點包住
+        let a1 = new A('pabi');
+        console.log(a1.firstname);
+        console.log(a1.hand);
+
+        let a2 = new A('pabika');
+        console.log(a2.firstname);
+        console.log(a2.hand);
+
+        a1.sayHello();
+
+        // ----------------------------------------------
+
+        // ①先設項目
+        let B = function (name, height, weight, age) {
+            // ②定義連結
+            this.name = name;
+            this.getName = function () {
+                return this.name;
+            }
+            this.height = height;
+            this.getHeight = function () {
+                return this.height;
+            }
+            this.weight = weight;
+            this.getWeight = function () {
+                return this.weight;
+            }
+        }
+        // ③新增內容
+        let a3 = new B('pabi', 100, 200, 300)
+        // ④取值
+        console.log(a3.getName());
+        console.log(a3.getHeight());
+        console.log(a3.getWeight())
+
+
+    </script>
+</body>
+
+</html>
