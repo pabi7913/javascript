@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title>_.shift()</title>
+    <script>
+
+// shift刪除第1個值
+let A=['a','b','c','d']
+A.shift()
+console.log(A)
+// A:['b','c','d']
+
+// unshift拉回被pop的值放回第1個
+A=['a','b','c','d']
+// A.pop()
+let B=A.pop()
+console.log(A)
+// A:['a','b','c']
+let C=A.pop()
+console.log(A)
+// A:['a','b']
+
+// unshift(一定要加名字)
+A.unshift(B)
+A.unshift(C)
+console.log(A)
+// A:['c','d','a','b']
+
+
+let D =[0,1,2,3,4,5]
+for(let d=1;d<=9487;d++){
+let e=D.pop();
+D.unshift(e)
+}
+consoloe.log (D)
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
