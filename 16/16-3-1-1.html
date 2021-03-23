@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>範例 16-3-1.html</title>
+    <style>
+        /* 小圓圈 */
+        .circle {
+            position: absolute;
+            left: 300px;
+            top: 300px;
+            display: none;
+            width: 10px;
+            height: 10px;
+            background-color: rgb(212, 159, 23);
+            border-radius: 50%;
+        }
+
+        /* 圓形邊界 */
+        .wrap {
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            width: 500px;
+            height: 500px;
+            border: 1px solid red;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- div.wrap 是大的圓形邊界 -->
+    <div class="wrap" id="wrap"></div>
+
+    <!-- div.circle 是之後要連續環狀複製的小圓圈 -->
+    <div class="circle" id="circle"></div>
+
+    <script>
+        //①設半徑=250（500/2）
+        let radius = 250;
+
+        //②選擇路徑要用的id style
+        let circle = document.getElementById('circle');
+
+        //③選擇要畫的範圍
+        let wrap = document.getElementById('wrap');
+
+        //④設置起始角度（預設0右邊中間）
+        // let degree = 0
+
+        // 90才是從最上方開始
+        let degree = 90
+
+        //⑤總共要有幾個小圓（大於moveLength就會變成一直線）
+        let qty = 36;
+
+        //⑥每次小圓的移動次數
+        let moveLength = 360 / qty;
+
+        //給 clearInterval 用的實體 id
+        let t;
+
+        //⑦定義繪圖函式
+        function draw() {
+            //當前角度加上最後一步的距離，大於等於 360，則結束繪圖（不加上去會多1步）
+            if (degree + moveLength >= 360+90) {
+                clearInterval(t);
+            };
+
+            //⑧計算當前的角度
+            degree += moveLength;
+
+            //⑨計算移動時x,y座標位置
+            let x = Math.cos(degree * (Math.PI / 180)) * radius;
+            let y = Math.sin(degree * (Math.PI / 180)) * radius;
+
+            //取得既有圓形的 left 與 top
+            let wrap_left = wrap.offsetLeft;
+            let wrap_top = wrap.offsetTop;
+
+            //計算小圓的相對位置。element.style.left 需要填寫數值加 px 字串
+            circle.style.left = (wrap_left + radius + x) + "px";
+            circle.style.top = (wrap_top + radius - y) + "px";
+
+            //left = 100 + 250 + 250
+            //top  = 100 + 250 - 0
+
+            //顯示小圓
+            circle.style.display = 'block';
+
+            //複製小圓
+            let newCircle = circle.cloneNode(true);
+
+            //將複製小圓放到 <body> 當中
+            document.body.appendChild(newCircle);
+        }
+
+        //透過 setInterval 來週期性執行繪圖函式
+        t = setInterval(function () {
+            draw();
+        }, 300);
+    </script>
+</body>
+
+</html>

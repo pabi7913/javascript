@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <title>範例 17-1-1.html</title>
+</head>
+
+<body>
+    <a href="javascript:OpenNewWindow()">open</a>
+    <br>
+    <a href="javascript:CloseNewWindow()">close</a>
+
+    <script>
+        function OpenNewWindow() {
+            a = window.open(
+                'https://tw.yahoo.com/',
+                // 名字隨便，但此行沒有的話不會新跳出視窗
+                '_blank',
+                'height=500,width=100'
+            )
+        }
+
+        function CloseNewWindow() {
+            a.close();
+
+            // 會先出現視窗，按確定後才關閉
+            if (a.closed) {
+                alert('close');
+            }
+        }
+    </script>
+</body>
+
+</html>
