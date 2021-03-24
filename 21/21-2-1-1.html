@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>從script新增元素</title>
+</head>
+<body>
+<div id='C'>
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+</div>
+    <script>
+// 不指定位置階層（從body）
+
+// ①新增元素A
+let A=document.createElement('p')
+// ②設置內容Atext
+let Atext=document.createTextNode('AAAAA')
+
+// ③設置A的id class...
+A.id='A';
+A.class='A';
+A.name='A';
+
+// ④將A結合內容Atext
+A.appendChild(Atext);
+
+//★ ⑤從body生出來
+document.body.appendChild(A);
+// ------------------------------------
+
+// 指定位置階層（從id or class）
+// ①尋找位置C(2種方法)
+let B=document.querySelector('#C')
+// let B=document.getElementById('C')
+// ②新增元素b
+let b=document.createElement('p')
+// ③設置內容btext
+let btext=document.createTextNode('bbbbb')
+
+// ④將b結合內容btext
+b.appendChild(btext);
+
+// ⑤從B(id=C)生出來b
+B.appendChild(b)
+
+    </script>
+</body>
+</html>

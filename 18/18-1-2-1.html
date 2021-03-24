@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>點選input跳出文字</title>
+</head>
+<body>
+
+    <!--① 做一個input框 設定id和onfocus的名字-->
+<input type="text" id="a" onfocus="a()">
+
+
+    <script>
+// ②設定function，尋找id，修改value
+function a(){
+document.getElementById('a').value='aaaa';
+}
+
+    </script>
+</body>
+</html>

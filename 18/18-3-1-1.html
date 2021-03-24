@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title>範例 18-3-1.html</title>
+    <style>
+        button{
+            width: 100px;
+            height: 50px;
+            transition: .25s;
+        }
+    </style>
+</head>
+<body>
+    <button id="a">連點兩下: 0</button>
+    
+
+    <script>
+    //計數用的變數
+    let count = 0;
+    let width = 100;
+    let height = 50;
+    
+    //註冊雙擊事件，每點兩下，按鈕會慢慢變大
+    document.querySelector('#a').addEventListener('mouseover', function(){
+        count += 1; //等於 count++
+        width += 1;
+        height += 1;
+        this.innerText = '連點兩下: ' + count;
+        this.style.width = width+'px';
+        this.style.height = height+'px';
+    });
+    </script>
+</body>
+</html>

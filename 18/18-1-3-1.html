@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <title>範例 18-1-3.html</title>
+
+    <style>
+        div {
+            width: 300px;
+            height: 200px;
+            background-color: gray;
+            transition: .5s;
+        }
+    </style>
+</head>
+
+<body>
+<!-- ① 做一個input框 設定id和onmousemove和onmouseout的名字-->
+    <!-- <div id="A" onmousemove="a()" onmouseout="b()">AAA</div> -->
+
+    <!-- ★① -->
+    <div id="A">AAA</div>
+
+    <script>
+        // ②設定function，尋找id，修改style
+        // function a() {
+        //     document.getElementById('A').style.backgroundColor = 'red';
+        //     document.getElementById('A').style.color = 'white';
+        //     document.getElementById('A').style.borderRadius = '50%';
+        // }
+
+        // function b() {
+        //     document.getElementById('A').style.backgroundColor = 'yellow';
+        //     document.getElementById('A').style.color = 'red';
+        //     document.getElementById('A').style.borderRadius = '3rem';
+        // }
+
+// ★②建議用這種方法，把觸發事件寫在script裡，選擇.querySelector('#A')增加事件.addEventListener('',function(){})
+document.querySelector('#A').addEventListener('mouseover',function(){
+    this.style.color = 'red';
+    this.style.backgroundColor = 'yellow';
+})
+document.querySelector('#A').addEventListener('mouseout',function(){
+    this.style.color = 'blue';
+    this.style.backgroundColor = 'red'
+})
+    </script>
+</body>
+
+</html>

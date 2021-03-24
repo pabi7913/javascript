@@ -1,0 +1,75 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>範例 19-1-1.html</title>
+</head>
+
+<body>
+    <button id="btn_get">GET</button>
+    <br><br>
+    <button id="btn_post">POST</button>
+    <br><br>
+    <button id="btn_ajax">★Ajax★</button>
+
+    <div id="message"></div>
+
+
+    <!-- 引入 jQuery 的函式庫 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        //取得 document 當中的 div#message 元素
+        let div = document.querySelector("div#message");
+
+        // 詢問是物件或是字串
+        // console.log(typeof (objJson));
+        // 或是顯示跳出視窗
+        // alert(objJson.arg.id);
+
+        $(document).ready(function () {
+            /**
+             * 如果使用 GET 方式，練習時可以使用下列的網址:
+             * https://data.taipei/opendata/datalist/apiAccess?scope=datasetMetadataSearch
+             */
+
+            //使用 GET 傳遞:會把輸入資料放在網址上，不建議用，查詢商品用
+            $(document).on('click', 'button#btn_get', function () {
+                $.get("https://httpbin.org/get"{
+                    name:$('.name').val(),password:$('.password').val()
+                }, function (objJson) {
+                    div.innerHTML = JSON.stringify(objJson);
+                });
+            });
+
+
+            //表單專用：使用 POST 傳遞
+            $(document).on('click', 'button#btn_post', function () {
+                $.post("https://httpbin.org/post ", { postMethod: "1" })
+                    .done(function (objJson) {
+                        div.innerHTML = JSON.stringify(objJson);
+                    });
+            });
+
+            //★建議用這個 Ajax 
+            // ①用on綁定click和btn,觸發function
+            $(document).on('click', 'button#btn_ajax', function () {
+                // ②用jquery的ajax
+                $.ajax({
+                    // ③選用'post' or 'get'
+                    method: 'post',
+                    // ④網址為
+                    url: "https://httpbin.org/post",
+                    // ⑤資料添加
+                    data: { postMethod: "1", postMethod2: "2", postMethod3: "3", }
+                })
+                    // ⑥完成時觸發function
+                    .done(function (objJson) {
+                        // ⑦將資料轉為json格式
+                        div.innerHTML = JSON.stringify(objJson)
+                    })
+            })
+        });
+    </script>
+</body>
+
+</html>
