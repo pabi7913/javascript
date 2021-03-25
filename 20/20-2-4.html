@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>動態修改元素內容</title>
+</head>
+<body>
+
+<ul id='A'>
+    <li>0</li>
+    <li>1</li>
+    <li>2</li>
+</ul>
+
+
+    
+    <script>
+// ①尋找要修改的大包包
+let A=document.querySelector('ul#A')
+// ②尋找要被取代(old)的寶包和排序
+let oldA=document.querySelectorAll('ul#A>li')[1]
+// ③設置一個新的寶包
+let newA=document.createElement('li')
+// ④設置內容
+let text=document.createTextNode('AAAAA')
+// ⑤將新的寶包結合內容
+// -------------------------------------------------
+newA.appendChild(text)
+// ⑥舊的寶包前面加上新的寶包
+A.insertBefore(newA,oldA)
+// -------------------------------------------------
+// ⑦新的寶包取代舊的寶包(若寫在一起，找的就是原本的位置，而不是改過後的位置，最好分開寫，不然會搞混)
+A.replaceChild(newA,oldA)
+// -------------------------------------------------
+// ⑦尋找要刪掉的寶包位置和排序
+let delA=document.querySelectorAll('ul#A>li')[0]
+// ⑧刪除寶包
+// A.removeChild(delA)
+// -------------------------------------------------
+// ⑨
+
+// ⑩
+
+
+
+    </script>
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>範例 22-1-1.html</title>
+</head>
+<body>
+<button id='b1'>0</button>
+<button id='b2'>1</button>
+<button id='b3'>2</button>
+
+    <!-- <button id="btn01">按鈕01</button>
+    <button id="btn02" name="btn02">按鈕02</button>
+    <button id="btn03" onclick="javascript: alert('btn03');">按鈕03</button> -->
+    
+    <script>
+
+// let b1=document.querySelectorAll('button')[0]
+let b1=document.querySelector('#b1')
+
+b1.setAttribute('name','B1')
+b1.setAttribute('disabled','')
+
+// let b2=document.querySelectorAll('button')[1]
+let b2=document.querySelector('#b2')
+let b2Name=b2.getAttribute('name')
+let b2Id=b2.getAttribute('id')
+document.write('<br>'+'<br>'+b2Name)
+document.write('<br>'+b2Id)
+
+document.b2.addEventListener('onclick',function(){this.setAttribute()})
+
+
+
+    // //取得第三個按鈕，刪除 onclick 屬性
+    // let btn03 = document.querySelectorAll("button")[2];
+    // btn03.removeAttribute("onclick");
+    </script>
+</body>
+</html>
