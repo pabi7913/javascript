@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas" width="1000" height="1000"></canvas>
+
+    <script>
+        let canvas = document.getElementById("canvas");
+        let ctx = canvas.getContext("2d");
+        ctx.lineWidth = 10;
+        ctx.strokeStyle = 'Green';
+
+        //這個範例，將「各別」繪製圓弧和圓
+
+        /**
+         * 繪製弧線
+         * void ctx.arc(x, y, radius, startAngle, endAngle [, anticlockwise]);
+         */
+
+        //1/4圓
+        ctx.beginPath();
+        ctx.arc(100, 100, 50, Math.PI * 0, Math.PI * 1.5, true);
+        ctx.strokeStyle = 'red';
+        ctx.lineWidth = 25;
+        ctx.stroke();
+        //1/2圓
+        ctx.beginPath();
+        ctx.arc(100, 100, 50, Math.PI * 0, Math.PI * 1, true);
+        ctx.strokeStyle = 'green';
+        ctx.lineWidth = 18;
+        ctx.stroke();
+        //3/4圓
+        ctx.beginPath();
+        ctx.arc(100, 100, 50, Math.PI * 0, Math.PI * .5, true);
+        ctx.strokeStyle = 'yellow';
+        ctx.lineWidth = 11;
+        ctx.stroke();
+        // //1圓
+        ctx.beginPath();
+        ctx.arc(100, 100, 50, Math.PI * 0, Math.PI * 2, true);
+        ctx.strokeStyle = 'blue';
+        ctx.lineWidth = 5;
+        ctx.stroke();
+
+
+
+
+
+
+        context.fillStyle = grd;  //填滿顏色
+
+        context.fillRect(0, 0, 175, 100);
+
+        // 彩虹
+        let circle = function (x, y, radius) {
+            ctx.beginPath();
+            ctx.arc(x, y, radius, 0, Math.PI, true);
+            ctx.stroke();
+        };
+        ctx.strokeStyle = 'Red';
+        ctx.lineWidth = 10;
+        circle(300, 100, 10);
+
+        ctx.strokeStyle = 'Orange';
+        circle(300, 100, 20);
+
+        ctx.strokeStyle = 'Yellow';
+        circle(300, 100, 30);
+
+        ctx.strokeStyle = 'Green';
+        circle(300, 100, 40);
+
+        ctx.strokeStyle = 'Blue';
+        circle(300, 100, 50);
+
+        ctx.strokeStyle = 'Purple';
+        circle(300, 100, 60);
+
+
+
+
+
+    </script>
+</body>
+
+</html>

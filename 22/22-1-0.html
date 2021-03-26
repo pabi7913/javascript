@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>範例 22-1-0.html</title>
+</head>
+
+<body>
+    <script>
+        // re = Regular Expression正規表達式
+
+        /**
+         * re.test()
+         * 測試字串是否配對，若是，則回傳 true，反之，則回傳 false
+         */
+        // let str01 = 'cccA0001';
+        // // let re01 = /A[0-9]+/g;
+        // let re01 = /A\d+/m;
+        // if (re01.test(str01)) {
+        //     console.log(`re.test(str) 回傳結果: true`);
+        // } else {
+        //     console.log(`re.test(str) 回傳結果: false`);
+        // }
+
+        /**
+         * str.match(re)
+         * 配對成功，結果以陣列(Array)形式回傳，反之則回傳 null
+         */
+
+        // let matchA= A.match(reA)
+        let B = '1992, 2019, 1789, 1776, 1024, 3000, 4096, 8192,87970897979'
+        let reB = /\d{4},/g;
+        let matchB = B.match(reB);
+        // 
+        if (matchB !== null) {
+            console.log(`==============================`);
+            console.log(`B.match(reB)的結果是否為 Array? ${Array.isArray(matchB)}`);
+            // A:是array
+            console.log(matchB);
+            // A:跑出match的B
+            for (let b of matchB) {
+                console.log(b);
+            }
+        } else {
+            console.log(`若都有抓對你就看不到我`);
+        }
+        // A:將A以直列式列出值
+        document.write(matchB)
+// -------------------------------------------------
+let C = `A0001, B0978, X9487, Y8787, Z5432`;
+let reC=/[A-Z]\d{4}/g
+
+// 這個不能這樣寫，會一直無限迴圈，跑不出去
+let execC=reC.exec(C)
+while(execC !==null){
+console.log(execC)
+}
+
+// 要這樣寫
+let execC=null
+while((execC=reC.exec(C))!==null){
+    console.log(execC);
+}
+
+
+
+
+        /**
+         * re03.exec(str03)
+         * 透過迭代方式找出配對的結果，
+         * 成功就透過迴圈(例如 for 或 while)各別讀取，
+         * 失敗就回傳 null，
+         * 
+         * 格式範例為:
+         * [
+         *     "A0001", 
+         *     index: 0, 
+         *     input: "A0001, B0978, X9487, Y8787, Z5432", 
+         *     groups: undefined
+         * ]
+        // let str03 = `A0001, B0978, X9487, Y8787, Z5432`;
+        // let re03 = /[A-Z][0-9]+/g;
+        // let match03 = null;
+        // while ((match03 = re03.exec(str03)) !== null) {
+        //     console.log(`==============================`);
+        //     console.log(match03);
+        // }
+
+        /**
+         * 與 re03.exec(str03) 相似，
+         * 唯一的差別，在於 re03 當中有定義群組(group)，
+         * 通常用來取得字串當中特定的範圍的文字。
+         * 
+         * 格式範例為:
+         * [
+         *     "https://stickershop.line-scdn.net/stickershop/v1/sticker/384169612/iPhone/sticker_animation@2x.png", 
+         *     "384169612", 
+         *     index: 110, 
+         *     input: "↵    https://stickershop.line-scdn.net/stickershop…sticker/384169603/iPhone/sticker_animation@2x.png", 
+         *     groups: undefined]
+         */
+        //     let str04 = `
+        // https://stickershop.line-scdn.net/stickershop/v1/sticker/384169592/iPhone/sticker_animation@2x.png, 
+        // https://stickershop.line-scdn.net/stickershop/v1/sticker/384169612/iPhone/sticker_animation@2x.png, 
+        // https://stickershop.line-scdn.net/stickershop/v1/sticker/384169607/iPhone/sticker_animation@2x.png,
+        // https://stickershop.line-scdn.net/stickershop/v1/sticker/384169603/iPhone/sticker_animation@2x.png`;
+        let re04 = /https?:\/\/stickershop\.line-scdn\.net\/stickershop\/v1\/sticker\/(\d{9})\/iPhone\/sticker_animation@2x\.png/g
+    //     let re04 = /https?:\/\/stickershop\.line-scdn\.net\/stickershop\/v1\/sticker\/([0-9]+)\/iPhone\/sticker_animation@2x.png/g
+
+    //     let match04 = null;
+    //     while ((match04 = re04.exec(str04)) !== null) {
+    //         console.log(`==============================`);
+    //         console.log(`圖片網址為: ${match04[0]}`);
+    //         console.log(`圖片名稱為: ${match04[1]}`);
+    //     }
+    </script>
+</body>
+
+</html>

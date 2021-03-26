@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Canvas</title>
 </head>
+
 <body>
     <canvas id="canvas" width="200" height="200"></canvas>
 
@@ -20,20 +22,22 @@
          * void ctx.arc(x, y, radius, startAngle, endAngle [, anticlockwise]);
          */
 
-        //從 0 弧度開始，畫到 PI / 2 弧度（畫筆從右往下畫弧）
+        // 正圓
         ctx.beginPath();
-        ctx.arc(50, 50, 20, 0, Math.PI / 2, false);
+        ctx.arc(50, 150, 20, 0, Math.PI * 2, false);
         ctx.stroke();
 
-        //從 0 弧度開始，畫到 PI 弧度（畫筆從右往下再往左畫弧）
+        //半圓
         ctx.beginPath();
-        ctx.arc(100, 50, 20, 0, Math.PI, false);
+        ctx.arc(50, 50, 20, 0, Math.PI, false);
+        ctx.stroke();
+        // 1/4圓
+        ctx.beginPath();
+        ctx.arc(50, 100, 20, 0, Math.PI / 2, false);
         ctx.stroke();
 
-        //從 0 弧度開始，畫到 PI * 2 弧度（畫筆從右開始畫弧，畫成一個圈）
-        ctx.beginPath();
-        ctx.arc(150, 50, 20, 0, Math.PI * 2, false);
-        ctx.stroke();
+
     </script>
 </body>
+
 </html>

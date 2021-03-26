@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+    <style>
+        body{
+            margin:0;
+            padding: 0;
+        }
+        canvas{
+            /* width:100vw; */
+            /* height:100vh; */
+            position: fixed;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"
+     width="1000" height="1000"
+     ></canvas>
+
+    <script>
+let A=document.querySelector('#canvas')
+let a=A.getContext('2d')
+a.fillStyle='red'
+a.fillRect(50,50,100,100)
+a.strokeStyle='green'
+a.lineWidth='10'
+a.strokeRect(50,50,100,100)
+
+a.fillStyle='blue'
+// a.fillRect(100,100,100,100)
+for(let i=0;i<8;i++){
+    a.fillRect(i*100,i*100,100,100)
+}
+
+// ①
+let grd = context.createLinearGradient(0, 0, 0, 100);
+        grd.addColorStop(0, "black");
+        grd.addColorStop(1, "white");
+// ②開始
+a.beginPath();
+// ③起始位置（left,top）
+a.moveTo(100,100);
+// ④完成位置（left,top）
+a.lineTo(600,600);
+// ⑤起始位置（left,top）
+a.moveTo(600,100);
+// ⑥完成位置（left,top）
+a.lineTo(100,600);
+// ⑦設置顏色，粗細
+a.strokeStyle='green'
+a.lineWidth='100'
+// ⑧結束
+a.stroke();
+// ------------------------------
+// ②開始
+a.beginPath();
+// ③起始位置（left,top）
+a.moveTo(100,100);
+// ④接續位置（left,top）
+a.lineTo(600,100);
+a.lineTo(100,600);
+// ⑦設置顏色，粗細
+a.strokeStyle='pink'
+a.lineWidth='100'
+// ⑧結束
+a.stroke();
+
+
+        //在這裡，我們要繪製一個「實心」圖形
+        ctx.beginPath();
+        ctx.moveTo(100, 100);
+
+        //由於這次要畫的是實心圖形，所以可以連續使用 ctx.lineTo()，把填充的框線先畫出
+        ctx.lineTo(100, 60);
+        ctx.lineTo(130, 30);
+        ctx.lineTo(160, 60);
+        ctx.lineTo(160, 100);
+        ctx.lineTo(160, 100);
+
+        //繪製實心圖形
+        ctx.fill();
+
+
+
+    </script>
+</body>
+</html>
