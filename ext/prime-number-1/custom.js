@@ -26,8 +26,7 @@ for(let dividend = 2; dividend <= 100; dividend++){
      */
     if(isPrime !== true){
         console.log(`${dividend} != 質數`);
-        // document.write(`<div id='no'>${dividend} != 質數 <br /></div>`)
-        ;
+        document.write(`${dividend} != 質數 <br />`);
 
         /**
          * 內層 for 迴圈走完，在進入下一個外層迴圈時，
@@ -39,16 +38,7 @@ for(let dividend = 2; dividend <= 100; dividend++){
         isPrime = true;
     } else {
         console.log(`${dividend} == 質數`);
-        document.write(`<div id='yes'><div class='number'>${dividend}</div> <span class='is'>是</span> <span class='js'>質數</span></div></div>`)
-        ;
+        document.write(`${dividend} == 質數 <br />`);
     }
-
-// let myList=document.getElementById('no')
-// console.log(myList)
-// let removeNode=document.getElementById('no')
-// console.log(removeNode)
-// myList.removeChild(removeNode);
-
-
 
 }

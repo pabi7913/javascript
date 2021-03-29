@@ -3297,7 +3297,8 @@ if(eventCategory && adId){
 </html>
 `;
 // ②
-let img = /https?:\/\/stickershop\.line-scdn\.net\/stickershop\/v1\/sticker\/\d{9}\/android\/sticker\.png/g
+let img = /https?:\/\/stickershop\.line-scdn\.net\/stickershop\/v1\/sticker\/(\d{9})\/android\/sticker\.png/g
+let img2 = /https?:\/\/stickershop\.line-scdn\.net\/stickershop\/v1\/sticker\/(\d{9})\/android\/sticker\.png/
 
 // let match_img=img.exec(html);
 // let arr=[];
@@ -3327,9 +3328,10 @@ let newArr = Array.from(new Set(arr));
 // ⑤
 let ul = document.querySelector("ul#myList")
 for (let link of newArr) {
-  if ((match = img.exec(link)) !== null) {
+  if ((match = img2.exec(link)) !== null) {
     let li = document.createElement('li')
     let img = document.createElement('img');
+    console.log(match);
     // [0]:網址
     img.setAttribute("src", match[0]);
     // [1]:正規表達式的(group)想要的就group起來
